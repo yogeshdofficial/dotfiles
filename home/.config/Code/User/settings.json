@@ -1,0 +1,11 @@
+{
+    "security.workspace.trust.enabled": false,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font','Droid Sans Mono', 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "workbench.sideBar.location": "right",
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.productIconTheme": "material-product-icons"
+}
