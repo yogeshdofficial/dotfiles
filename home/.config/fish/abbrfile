@@ -19,3 +19,6 @@ gpl git pull
 
 c code
 n nvim
+dup docker-compose up
+dwn docker-compose down
+dvn docker-compose down -v

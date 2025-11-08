@@ -33,5 +33,11 @@
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "reactSnippets.settings.importReactOnTop": false
+    "reactSnippets.settings.importReactOnTop": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vscode-neovim.neovimClean": true,
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": false
 }
