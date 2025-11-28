@@ -1,43 +1,71 @@
 {
-    "security.workspace.trust.enabled": false,
-    "editor.fontFamily": "'JetBrainsMono Nerd Font','Droid Sans Mono', 'monospace', monospace",
-    "editor.fontLigatures": true,
-    "workbench.sideBar.location": "right",
-    "window.titleBarStyle": "native",
-    "window.customTitleBarVisibility": "never",
-    "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.productIconTheme": "material-product-icons",
-    "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
-    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
-    "github.copilot.nextEditSuggestions.enabled": false,
-    "redhat.telemetry.enabled": false,
-    "github.copilot.enable": {
-        "*": false,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false,
-        "java": false
+  "security.workspace.trust.enabled": false,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font','Droid Sans Mono', 'monospace', monospace",
+  "editor.fontLigatures": true,
+  "workbench.sideBar.location": "right",
+  "window.titleBarStyle": "native",
+  "window.customTitleBarVisibility": "never",
+  "window.menuBarVisibility": "toggle",
+  "workbench.productIconTheme": "material-product-icons",
+  "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+  "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "redhat.telemetry.enabled": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "java": false
+  },
+  "editor.formatOnSave": true,
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    "/tmp/postman-collections-post-response.instructions.md": true,
+    "/tmp/postman-collections-pre-request.instructions.md": true,
+    "/tmp/postman-folder-post-response.instructions.md": true,
+    "/tmp/postman-folder-pre-request.instructions.md": true,
+    "/tmp/postman-http-request-post-response.instructions.md": true,
+    "/tmp/postman-http-request-pre-request.instructions.md": true
+  },
+  "terminal.integrated.stickyScroll.enabled": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimClean": true,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "files.readonlyInclude": {
+    "**/.cargo/registry/src/**/*.rs": true,
+    "**/.cargo/git/checkouts/**/*.rs": true,
+    "**/lib/rustlib/src/rust/library/**/*.rs": true
+  },
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "reactSnippets.settings.importReactOnTop": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.linkedEditing": true,
+  "sonarlint.rules": {
+    "typescript:S6759": {
+      "level": "off"
     },
-    "editor.formatOnSave": true,
-    "chat.instructionsFilesLocations": {
-        ".github/instructions": true,
-        "/tmp/postman-collections-post-response.instructions.md": true,
-        "/tmp/postman-collections-pre-request.instructions.md": true,
-        "/tmp/postman-folder-post-response.instructions.md": true,
-        "/tmp/postman-folder-pre-request.instructions.md": true,
-        "/tmp/postman-http-request-post-response.instructions.md": true,
-        "/tmp/postman-http-request-pre-request.instructions.md": true
-    },
-    "terminal.integrated.stickyScroll.enabled": false,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "reactSnippets.settings.importReactOnTop": false,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
-    "vscode-neovim.neovimClean": true,
-    "editor.tabSize": 2,
-    "editor.minimap.enabled": false
+    "java:S1220": {
+      "level": "off"
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Catppuccin Mocha"
 }
