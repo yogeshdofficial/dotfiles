@@ -16,7 +16,7 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false,
-    "java": false
+    "java": false,
   },
   "editor.formatOnSave": true,
   "chat.instructionsFilesLocations": {
@@ -26,14 +26,14 @@
     "/tmp/postman-folder-post-response.instructions.md": true,
     "/tmp/postman-folder-pre-request.instructions.md": true,
     "/tmp/postman-http-request-post-response.instructions.md": true,
-    "/tmp/postman-http-request-pre-request.instructions.md": true
+    "/tmp/postman-http-request-pre-request.instructions.md": true,
   },
   "terminal.integrated.stickyScroll.enabled": false,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "prettier.prettier-vscode",
   },
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
   },
   "vscode-neovim.neovimClean": true,
   "editor.tabSize": 2,
@@ -41,31 +41,33 @@
   "files.readonlyInclude": {
     "**/.cargo/registry/src/**/*.rs": true,
     "**/.cargo/git/checkouts/**/*.rs": true,
-    "**/lib/rustlib/src/rust/library/**/*.rs": true
+    "**/lib/rustlib/src/rust/library/**/*.rs": true,
   },
   "code-runner.runInTerminal": true,
   "code-runner.saveFileBeforeRun": true,
   "reactSnippets.settings.importReactOnTop": false,
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "prettier.prettier-vscode",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.linkedEditing": true,
   "sonarlint.rules": {
     "typescript:S6759": {
-      "level": "off"
+      "level": "off",
     },
     "java:S1220": {
-      "level": "off"
-    }
+      "level": "off",
+    },
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "workbench.colorTheme": "Catppuccin Mocha"
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "python.defaultInterpreterPath": "/bin/python",
+  "chat.viewSessions.orientation": "stacked",
 }

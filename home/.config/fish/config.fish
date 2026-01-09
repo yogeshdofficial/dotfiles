@@ -9,6 +9,7 @@ set -gx PATH $ANDROID_HOME/tools/bin $PATH;
 set -gx PATH $ANDROID_HOME/platform-tools $PATH;
 	source "$HOME/.homesick/repos/homeshick/completions/homeshick.fish"
 source "$HOME/.homesick/repos/homeshick/homeshick.fish"
+pyenv init - fish | source
 end
 
 # Start X at login

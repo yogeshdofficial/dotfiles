@@ -3,7 +3,7 @@ rf rm -rf
 xp chmod +x
 cr cp -r
 
-pa parus
+y yayfzf
 pac sudo pacman -S
 pay sudo pacman -Syy
 par sudo pacman -R
