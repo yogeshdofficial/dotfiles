@@ -37,7 +37,6 @@
   },
   "vscode-neovim.neovimClean": true,
   "editor.tabSize": 2,
-  "editor.minimap.enabled": false,
   "files.readonlyInclude": {
     "**/.cargo/registry/src/**/*.rs": true,
     "**/.cargo/git/checkouts/**/*.rs": true,
@@ -70,4 +69,14 @@
   "workbench.colorTheme": "Catppuccin Mocha",
   "python.defaultInterpreterPath": "/bin/python",
   "chat.viewSessions.orientation": "stacked",
+  "telemetry.telemetryLevel": "off",
+  "sonarlint.focusOnNewCode": true,
+  "sonarlint.automaticAnalysis": true,
+  "[html]": {
+    "editor.defaultFormatter": "prettier.prettier-vscode",
+  },
+  "git.openRepositoryInParentFolders": "never",
+  // "rust-analyzer.inlayHints.chainingHints.enable": false,
+  // "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "makefile.compileCommandsPath": ".vscode/compile_commands.json",
 }

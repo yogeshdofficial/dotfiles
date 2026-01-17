@@ -5,9 +5,10 @@ cr cp -r
 
 y yayfzf
 pac sudo pacman -S
-pay sudo pacman -Syy
+pacu sudo pacman -Syy
 par sudo pacman -R
 paf sudo pacman -F
+paq sudo pacman -Qi
 
 gc git clone --depth=1
 gi git init
