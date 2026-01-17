@@ -1,0 +1,3 @@
+#!/bin/bash
+kitty sh -c "curl -sN http://rick.jachan.dev | bash"
+
