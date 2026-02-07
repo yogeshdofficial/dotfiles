@@ -46,7 +46,7 @@
   "code-runner.saveFileBeforeRun": true,
   "reactSnippets.settings.importReactOnTop": false,
   "[jsonc]": {
-    "editor.defaultFormatter": "prettier.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -60,6 +60,9 @@
       "level": "off",
     },
     "java:S1220": {
+      "level": "off",
+    },
+    "c:S1135": {
       "level": "off",
     },
   },
@@ -79,4 +82,25 @@
   // "rust-analyzer.inlayHints.chainingHints.enable": false,
   // "rust-analyzer.inlayHints.closingBraceHints.enable": false,
   "makefile.compileCommandsPath": ".vscode/compile_commands.json",
+  "makefile.configureOnOpen": true,
+  "http.systemCertificatesNode": true,
+  "dbcode.connections": [
+    {
+      "connectionId": "kxeyeSQ2ZpAJUkjNATEYw",
+      "name": "lothal",
+      "driver": "postgres",
+      "connectionType": "host",
+      "host": "127.0.0.1",
+      "port": 5432,
+      "ssl": false,
+      "authMethod": "password",
+      "username": "postgres",
+      "password": "",
+      "savePassword": "secretStorage",
+      "database": "ci",
+      "readOnly": false,
+      "postConnectionSqlType": "inline",
+      "connectionTimeout": 30,
+    },
+  ],
 }
