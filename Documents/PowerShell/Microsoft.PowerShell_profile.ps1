@@ -1,51 +1,58 @@
+# ==============================================================================
+# 1. ENVIRONMENT VARIABLES & FUNCTIONS
+# ==============================================================================
 function df
-{ git --git-dir=$HOME/.dotfiles --work-tree=$HOME @args 
+{ 
+  git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" $args 
 }
+$env:CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 
+# ==============================================================================
+# 2. EXTERNAL TOOL INITIALIZATIONS
+# ==============================================================================
 Invoke-Expression (&starship init powershell)
-
 (&mise activate pwsh) | Out-String | Invoke-Expression
-
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
-
-# ${UserConfigDir}/powershell/Microsoft.PowerShell_profile.ps1
-$env:CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-Set-PSReadLineOption -Colors @{ "Selection" = "`e[7m" }
-Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 carapace _carapace | Out-String | Invoke-Expression
 
-
-# 1. Force load PSReadLine to prevent any timing conflicts
+# ==============================================================================
+# 3. TRUE FISH-SHELL OPTIONS & SUGGESTIONS
+# ==============================================================================
 Import-Module PSReadLine
 
-# 2. Strict Fish-Style Arrow Key Prefix Search
-# This will strictly match past commands STARTING with your typed text (Fish style)
+Set-PSReadLineOption -Colors @{ 
+  "Selection"        = "`e[7m" 
+  "InlinePrediction" = "$([char]0x1b)[38;5;244;3m" # Muted gray text style
+}
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle InlineView
+
+# FISH CORNERSTONE: Forces cursor to the END of the command during up/down history searches
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+
+# Standard Tab completion menu interface
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+
+# Strict Fish Prefix Search (e.g. typing 'ab' skips 'pwd' and matches 'abc')
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
-# 3. Fish-Style Predictive Autosuggestions (Inline Gray Text)
-#Set-PSReadLineOption -PredictionSource History
-#Set-PSReadLineOption -PredictionViewStyle InlineView
+# ==============================================================================
+# 4. PURE FISH NAVIGATION ACTIONS
+# ==============================================================================
+# Right Arrow: Accepts the suggestion LETTER-BY-LETTER
+Set-PSReadLineKeyHandler -Key RightArrow -Function ForwardChar
 
-# 4. Power-User Fish Keybindings for Suggestions
-# [Right Arrow] accepts the ENTIRE suggestion
-Set-PSReadLineKeyHandler -Key RightArrow -Function AcceptSuggestion
-# [Ctrl + Right Arrow] accepts only the NEXT WORD of the suggestion (Exactly like Fish!)
+# Ctrl + Right Arrow: Accepts the suggestion WORD-BY-WORD 
 Set-PSReadLineKeyHandler -Key Ctrl+RightArrow -Function ForwardWord
 
+# End Key: Jumps to the end and accepts the ENTIRE suggestion instantly
+Set-PSReadLineKeyHandler -Key End -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::EndOfLine()
+  [Microsoft.PowerShell.PSConsoleReadLine]::AcceptSuggestion()
+}
 
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
-
-#Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
-# Start with visible preview on the right
-#Set-PsFzfOption -TabCompletionPreviewWindow 'right|down|hidden'
-
-# Start hidden and toggle between up, left, and hidden
-#Set-PsFzfOption -TabCompletionPreviewWindow 'hidden|up|left|hidden'
-
-
-# 5. Quick Toggle to List View (Fish/Zsh completion menu)
-# Pressing [F2] dynamically switches between Fish inline view and a vertical menu
+# F2 Key: View Style Switcher (Inline View <-> Visual Dropdown)
 Set-PSReadLineKeyHandler -Key F2 -ScriptBlock {
   $options = Get-PSReadLineOption
   if ($options.PredictionViewStyle -eq 'InlineView')
@@ -57,3 +64,16 @@ Set-PSReadLineKeyHandler -Key F2 -ScriptBlock {
   }
 }
 
+# ==============================================================================
+# 5. FZF INTEGRATION
+# ==============================================================================
+if (Get-Module -ListAvailable -Name PSFzf)
+{
+  Import-Module PSFzf
+    
+  # Configure global FZF behavior chords
+  Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+    
+  # Map F3 to trigger interactive fuzzy file search
+  Set-PSReadLineKeyHandler -Key F3 -ScriptBlock { Invoke-FzfTabCompletion }
+}

@@ -20,15 +20,26 @@
       "workspaces": [
         {
           "name": "I",
-          "layout": "VerticalStack"
+          "layout": "VerticalStack",
+          "initial_window_placement_rules": "Primary",
+          "layout_options": {
+            "column_ratios": [
+              0.55
+            ]
+          }
         },
         {
           "name": "II",
-          "layout": "VerticalStack"
+          "layout": "VerticalStack",
+          "initial_window_placement_rules": "Primary",
+          "column_ratios": [
+            0.6
+          ]
         },
         {
           "name": "III",
-          "layout": "VerticalStack"
+          "layout": "VerticalStack",
+          "initial_window_placement_rules": "Primary"
         },
         {
           "name": "IV",
