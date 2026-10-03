@@ -17,7 +17,7 @@ VK_LWIN + w                  : Start-Process "C:\Users\Yogesh\AppData\Local\Prog
 
 
 VK_LWIN + q                 : komorebic close
-VK_LWIN + m                 : komorebic minimize
+VK_LWIN + shift+ m                 : komorebic minimize
 
 # Focus windows
 VK_LWIN + h                 : komorebic focus left
@@ -51,7 +51,8 @@ VK_LWIN + shift + oem_minus : komorebic resize-axis vertical decrease
 
 # Manipulate windows
 VK_LWIN + t                 : komorebic toggle-float
-VK_LWIN + shift + f         : komorebic toggle-monocle
+VK_LWIN + f                 : komorebic toggle-maximize
+VK_LWIN + m       : komorebic toggle-monocle
 
 # Window manager options
 VK_LWIN + shift + r         : komorebic retile
