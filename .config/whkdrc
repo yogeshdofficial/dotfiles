@@ -1,0 +1,82 @@
+.shell pwsh
+
+# Reload whkd configuration
+# VK_LWIN + o                 : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
+VK_LWIN + shift+ d                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
+VK_LWIN + shift + o         : komorebic reload-configuration
+
+VK_LWIN + shift+ i                 : komorebic toggle-shortcuts
+
+# App shortcuts - these require shell to be pwsh / powershell
+# The apps will be focused if open, or launched if not open
+VK_LWIN + s                 : start chrome
+
+VK_LWIN + VK_RETURN                  : start wt
+VK_LWIN + w                  : Start-Process "C:\Users\Yogesh\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+
+
+
+VK_LWIN + q                 : komorebic close
+VK_LWIN + m                 : komorebic minimize
+
+# Focus windows
+VK_LWIN + h                 : komorebic focus left
+VK_LWIN + j                 : komorebic focus down
+VK_LWIN + k                 : komorebic focus up
+VK_LWIN + l                 : komorebic focus right
+VK_LWIN + shift + oem_4     : komorebic cycle-focus previous # oem_4 is [
+VK_LWIN + shift + oem_6     : komorebic cycle-focus next # oem_6 is ]
+
+# Move windows
+VK_LWIN + shift + h         : komorebic move left
+VK_LWIN + shift + j         : komorebic move down
+VK_LWIN + shift + k         : komorebic move up
+VK_LWIN + shift + l         : komorebic move right
+VK_LWIN + shift + return    : komorebic promote
+
+# Stack windows
+VK_LWIN + left              : komorebic stack left
+VK_LWIN + down              : komorebic stack down
+VK_LWIN + up                : komorebic stack up
+VK_LWIN + right             : komorebic stack right
+VK_LWIN + oem_1             : komorebic unstack # oem_1 is ;
+VK_LWIN + oem_4             : komorebic cycle-stack previous # oem_4 is [
+VK_LWIN + oem_6             : komorebic cycle-stack next # oem_6 is ]
+
+# Resize
+VK_LWIN + oem_plus          : komorebic resize-axis horizontal increase
+VK_LWIN + oem_minus         : komorebic resize-axis horizontal decrease
+VK_LWIN + shift + oem_plus  : komorebic resize-axis vertical increase
+VK_LWIN + shift + oem_minus : komorebic resize-axis vertical decrease
+
+# Manipulate windows
+VK_LWIN + t                 : komorebic toggle-float
+VK_LWIN + shift + f         : komorebic toggle-monocle
+
+# Window manager options
+VK_LWIN + shift + r         : komorebic retile
+VK_LWIN + p                 : komorebic toggle-pause
+
+# Layouts
+VK_LWIN + x                 : komorebic flip-layout horizontal
+VK_LWIN + y                 : komorebic flip-layout vertical
+
+# Workspaces
+VK_LWIN + 1                 : komorebic focus-workspace 0
+VK_LWIN + 2                 : komorebic focus-workspace 1
+VK_LWIN + 3                 : komorebic focus-workspace 2
+VK_LWIN + 4                 : komorebic focus-workspace 3
+VK_LWIN + 5                 : komorebic focus-workspace 4
+VK_LWIN + 6                 : komorebic focus-workspace 5
+VK_LWIN + 7                 : komorebic focus-workspace 6
+VK_LWIN + 8                 : komorebic focus-workspace 7
+
+# Move windows across workspaces
+VK_LWIN + shift + 1         : komorebic move-to-workspace 0
+VK_LWIN + shift + 2         : komorebic move-to-workspace 1
+VK_LWIN + shift + 3         : komorebic move-to-workspace 2
+VK_LWIN + shift + 4         : komorebic move-to-workspace 3
+VK_LWIN + shift + 5         : komorebic move-to-workspace 4
+VK_LWIN + shift + 6         : komorebic move-to-workspace 5
+VK_LWIN + shift + 7         : komorebic move-to-workspace 6
+VK_LWIN + shift + 8         : komorebic move-to-workspace 7

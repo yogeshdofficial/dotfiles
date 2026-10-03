@@ -1,0 +1,1 @@
+function df { git --git-dir=$HOME/.dotfiles --work-tree=$HOME @args }
